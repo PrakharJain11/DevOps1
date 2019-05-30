@@ -1,4 +1,4 @@
 FROM openjdk:8-jdk-alpine
-ADD target/docker-spring-boot.jar docker-spring-boot.jar
+ADD ./build/libs/SpringBootGradle.jar SpringBootGradle.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "docker-spring-boot.jar"]
+ENTRYPOINT ["java", "-jar", "SpringBootGradle.jar"]
