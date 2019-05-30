@@ -13,7 +13,7 @@ public class EmployeeController {
 	@RequestMapping(value="/hi", method=RequestMethod.GET)
 	public String sayHi()
 	{
-		return "Hi Dude1";
+		return "Hi Dude2";
 	}
 	
     /*//Happy path, an employee is returned as response
