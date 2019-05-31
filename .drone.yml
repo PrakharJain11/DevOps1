@@ -11,7 +11,7 @@ steps:
 - name: docker
   image: plugins/docker
   settings:
-    repo: prakharjain/DevOps
+    repo: prakharjain/springboot
     tags: latest
     username:
       from_secret: docker_username
