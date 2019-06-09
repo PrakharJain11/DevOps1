@@ -17,3 +17,19 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
+      
+- name: deploy_master
+  image: vallard/drone-kube
+  settings:
+    template: kubernetes/deployment.yml
+    namespace: default
+    server: https://35.184.90.246
+    ca:
+      from_secret: kube_ca
+    token: ya29.GqQBIweI5axrqLqma0fhF12slqPt9fneVZKRlg1IYw9oXCOa21aAxXOVtlM0OE3eLwUAdqNwcJwHaPszeIBnDPNpZu-l6t7V5NJSyu-rS21D3P-6EoVfFmpuSPmSfTBrHS6bl-dHNI4WXoi9i1q0ww3foIbQfQvLGWqA0YVrVpBXTG0M9pGX1p9IZS5xS90flhLjwKtnk7hHVGZgYSfDlu_AcJ8tCNg
+  when:
+      event:
+      - push
+      - pull-request
+      branch:
+      - master
